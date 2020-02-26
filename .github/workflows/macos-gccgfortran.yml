@@ -23,7 +23,7 @@ jobs:
         export CXX=g++-9
         mkdir build
         cd build
-        cmake -DCMAKE_INSTALL_PREFIX=$PWD/../install .. 2>&1 | tee log.cmake
+        cmake -DBUILD_NETCDF=OFF -DBUILD_PNG=OFF -DBUILD_JASPER=OFF -DBUILD_ESMF=OFF -DCMAKE_INSTALL_PREFIX=$PWD/../install .. 2>&1 | tee log.cmake
         make -j8 2>&1 | tee log.make
         cd ..
         ls -l install/bin/ESMF_Info
